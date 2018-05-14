@@ -6,17 +6,19 @@
   <title>练习</title>
   <style>
     body {
-      font-size: 20px;
       margin: 0;
     }
+
     .header {
+      width: 600px;
       color: white;
       background-color: black;
-      padding-left: 591.5px;
+      padding-left: calc(50% - 300px);
+      padding-right: calc(50% - 300px);
     }
 
     .main {
-      width: 700px;
+      width: 600px;
       margin: 10px auto;
     }
 
@@ -25,13 +27,17 @@
       padding-left: 0;
     }
 
+    ul.borderone {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+
     .borderone>li {
-      width: 200px;
+      box-sizing: border-box;
+      width: 180px;
       height: 40px;
       border: 3px solid;
-      padding: 5px 0;
-      margin-bottom: 15px;
-      margin-right: 30px;
+      margin: 15px 30px; 
       background-color: #FFC0CB;
     }
 
@@ -40,15 +46,15 @@
     }
 
     .borderone>li:nth-child(n+5) {
-      margin-left: 233px
+      margin-left: 240px
     }
 
     .borderone>li:nth-child(4n+5) {
-      margin-top: -284px
+      margin-top: -220px
     }
 
     .borderone>li:nth-child(n+9) {
-      margin-left: 466px
+      margin-left: 450px
     }
 
     ul.bordertwo{
@@ -56,8 +62,8 @@
     }
 
     .bordertwo>li {
-      border-bottom: 3px dotted;
-      margin-bottom: -3px;
+      border-bottom: 1px dotted;
+      margin-bottom: -1px;
     }
 
     .footer {
@@ -98,8 +104,8 @@
     </ul>
   </main>
   <footer class="footer">
-    ©版权所有<br> 
-    本页所有布局均使用块元素
+    <p>©版权所有<br>
+    本页所有布局均使用块元素</p>
   </footer>
 </body>
 </html>
