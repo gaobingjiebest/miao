@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>jiefangcheng</title>
-  <script type="text/javascript">
+  <script type="text/javascriptx">
     var a = +prompt("a:");
     var b = +prompt("b:");
     var c = +prompt("c:");
@@ -20,6 +20,7 @@
   </script>
 
   <script type="text/javascript">
+    debugger
     var a = +prompt("a:");
     var b = +prompt("b:");
     var c = +prompt("c:");
@@ -28,23 +29,59 @@
     var f = +prompt("f:");
 
     if (a == 0) {
-      alert("a不能等于0");
-      a = +prompt("a:");
+      while(a == 0) {
+        alert("a不能等于0");
+        a = +prompt("a:");
+      }
     }
 
-    if (b == 0 ) {
-      alert("b不能等于0");
-      b = +prompt("b:");
+    if (a == NaN) {
+      while(a == NaN) {
+        alert("a不能输入数字以外的值");
+        a = +prompt("a:");
+      }
+    }
+
+    if (b == 0) {
+      while(b == 0) {
+        alert("b不能等于0");
+        b = +prompt("b:");      
+      }
+    }
+
+    if (b == NaN) {
+      while(b == NaN) {
+        alert("b不能输入数字以外的值");
+        b = +prompt("b:");
+      }
     }
 
     if (d == 0) {
-      alert("d不能等于0");
-      d = +prompt("d:");
+      while(d == 0) {
+        alert("d不能等于0");
+        d = +prompt("d:");
+      }      
+    }
+
+    if (d == NaN) {
+      while(d == NaN) {
+        alert("d不能输入数字以外的值");
+        d = +prompt("d:");
+      }
     }
 
     if (e == 0) {
-      alert("e不能等于0");
-      e = +prompt("e:");
+      while(e == 0) {
+        alert("e不能等于0");
+        e = +prompt("e:"); 
+      }
+    }
+
+    if (e == NaN) {
+      while(e == NaN) {
+        alert("e不能输入数字以外的值");
+        e = +prompt("e:");
+      }
     }
 
     if (d * b - a * e != 0) {
