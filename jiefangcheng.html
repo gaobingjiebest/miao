@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jiefangcheng</title>
+  <script type="text/javascript">
+    var a = +prompt("a:");
+    var b = +prompt("b:");
+    var c = +prompt("c:");
+
+    if ((b ** 2 - 4 * a * c) > 0) {
+      console.log((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+      console.log((-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+    } else if ((b ** 2 - 4 * a * c) == 0) {
+      console.log((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a));
+    } else {
+      console.log((-b + Math.sqrt(-(b ** 2 - 4 * a * c))) / (2 * a) + "i")
+      console.log((-b - Math.sqrt(-(b ** 2 - 4 * a * c))) / (2 * a) + "i")
+    }
+  </script>
+
+  <script type="text/javascript">
+    var a = +prompt("a:");
+    var b = +prompt("b:");
+    var c = +prompt("c:");
+    var d = +prompt("d:");
+    var e = +prompt("e:");
+    var f = +prompt("f:");
+
+    if (a == 0) {
+      alert("a不能等于0");
+      a = +prompt("a:");
+    }
+
+    if (b == 0 ) {
+      alert("b不能等于0");
+      b = +prompt("b:");
+    }
+
+    if (d == 0) {
+      alert("d不能等于0");
+      d = +prompt("d:");
+    }
+
+    if (e == 0) {
+      alert("e不能等于0");
+      e = +prompt("e:");
+    }
+
+    if (d * b - a * e != 0) {
+      var x = console.log((b * f - c * e) / (d * b - a * e));
+      var y = console.log((d * c - a * f) / (d * b - a * e));
+    }
+
+    if (d * b - a * e == 0) {
+      if (d * c - a * f == 0) {
+        console.log("有无数解");
+      }
+    }
+
+    if (d * b - a * e == 0) {
+      if (d * c - a * f != 0) {
+        console.log("无解");
+      }
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
