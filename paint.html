@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var cvs = document.querySelector('canvas')
+  var ctx = cvs.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+</script>
+<script>
+  for (var i = 0; i < 400; i++) {
+    if (i % 2 === 0) {
+      dot(i, 10, color = 'black')
+    }
+  }
+
+  for (var i = 0; i < 400; i++) {
+    dot(4 * i + 1, 15, color = 'black')
+    dot(4 * i + 2, 15, color = 'black')
+  }
+
+  for (var i = 0; i < 400; i++) {
+    dot(5 * i + 1, 20, color = 'black')
+    dot(5 * i + 2, 20, color = 'black')
+    dot(5 * i + 3, 20, color = 'black')
+  }
+
+  for (var i = 0; i < 400; i++) {
+    dot(i, i, color = 'black')
+  }
+
+  for (var i = 0; i < 400; i++) {
+    dot(i, i * 0.75, color = 'black')
+  }
+
+  for (var i = 0; i < 400; i++) {
+    if (i >= 120 && i <= 160) {
+      dot(i, 120, color = 'black')
+      for (var o = 0; o < 40; o++) {
+        dot(i, 120 + o, color = 'black')
+      }
+    }
+  }
+
+  for (var i = 0; i < 400; i++) {
+    dot(40 + 40 * Math.cos(i * 3.14 / 180), 40 + 40 * Math.sin(i * 3.14 / 180), color = 'black')
+  }
+
+  var p = 255
+  var r = 0
+  for (var i = 200; i < 252; i++) {
+    p = p - 5
+    r = 0
+    for (var o = 0; o <= 51; o++) {
+      r = r + 5
+      dot(i, 200 + o, color = 'rgb(255,' + p + ',' + r +')')
+    }   
+  }
+
+
+</script>
+</html>
