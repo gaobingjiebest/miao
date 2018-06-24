@@ -35,13 +35,19 @@
     var n = Number(prompt("请设置一个整数"))
 
     if (n % 2 == 0) {
-      console.log(even)
+      console.log("even")
     } else if (n % 2 == 1) {
-      console.log(odd)
+      console.log("odd")
     }
   </script>
   <script type="text/javascript" id="ch0104/04">
-    
+    var n = Number(prompt("请输入一个字符").charCodeAt())
+
+    if (n % 2 === 1) {
+      console.log("YES")
+    } else if (n % 2 === 0) {
+      console.log("NO")
+    }
   </script>
   <script type="text/javascript" id="ch0104/05">
     var x = Number(prompt("请输入第一个整数"))
@@ -276,13 +282,11 @@
     var c = +prompt("c:");
 
     if ((b ** 2 - 4 * a * c) > 0) {
-      console.log("x1=" + ((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5));
-      console.log("x2=" + ((-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5));
+      console.log("x1=" + ((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5) + ";x2=" + ((-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5));
     } else if ((b ** 2 - 4 * a * c) == 0) {
       console.log("x1=x2=" + ((-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5));
     } else {
-      console.log("x1=" + ((-b) / (2 * a)).toFixed(5) + "+" + (Math.sqrt(-(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5) + "i")
-      console.log("x2=" + ((-b) / (2 * a)).toFixed(5) + "-" + (Math.sqrt(-(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5) + "i")
+      console.log("x1=" + ((-b) / (2 * a)).toFixed(5) + "+" + (Math.sqrt(-(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5) + "i;" + "x2=" + ((-b) / (2 * a)).toFixed(5) + "-" + (Math.sqrt(-(b ** 2 - 4 * a * c)) / (2 * a)).toFixed(5) + "i") 
     }
   </script>
   <script type="text/javascript" id="ch0104/21">
