@@ -400,9 +400,7 @@
     var geshu = Number(prompt("请输入序列的个数"))
     var number
     var number1 = Number(prompt('请输入第1个数'))
-    console.log(number1 + "　")
     var number2 = Number(prompt('请输入第2个数'))
-    console.log(number2 + "　")
     var bigOne
     var smallOne
 
@@ -418,7 +416,6 @@
 
     for (var i = 0; i < geshu - 2; i++) {
       number3 = Number(prompt('请输入第' + (i + 3) + '个数'))
-      console.log(number + "　")
       if (number3 > bigOne) {
         bigOne = number3
       }
@@ -451,7 +448,7 @@
     }
     all = jin + yin + tong
 
-    console.log("金牌:" + jin + "银牌:" + yin + "铜牌:" + tong + "总数:" + all)
+    console.log(jin + " " + yin + " " + tong + " " + all)
   </script>
   <script type="text/javascript" id="ch0105/08">
     var n = Number(prompt("请输入多边形的边数"))
@@ -533,9 +530,10 @@
     }
 
     var shang = bigOne - smallOne
+    var add
 
-    for (var i = 0; i < shang; i++) {
-      var add = smallOne + i
+    for (var i = 0; i < shang + 1; i++) {
+      add = smallOne + i
       if (add % 17 == 0) {
         total = total + add
       }
@@ -567,7 +565,7 @@
         ten = ten + 1
       }
     }
-    console.log("1的个数:" + one + " 5的个数:" + five + " 10的个数:" + ten)
+    console.log(one + " " + five + " " + ten)
   </script>
   <script type="text/javascript" id="ch0105/12">
     var n = Number(prompt("请设置列表的长度"))
