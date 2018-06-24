@@ -318,11 +318,10 @@
         alert("年龄要在15岁至25岁之间")
         studentAge = Number(prompt("输入第" + (i + 1) + "学生的年龄"))
       } 
-      console.log(studentAge)
       ageSum = ageSum + studentAge
     }
 
-    average = (Math.round(ageSum / renshu * 100)) / 100
+    average = (ageSum / renshu).toFixed(2)
     console.log(average)
   </script>
   <script type="text/javascript" id="ch0105/02">
@@ -335,7 +334,7 @@
     }
 
     //var pingjun = +((zongjieyu / 12).toFixed(2))
-    console.log("结余：$" + (zongjieyu / 12).toFixed(2))
+    console.log("$" + (zongjieyu / 12).toFixed(2))
     
   </script>
   <script type="text/javascript" id="ch0105/03">
@@ -376,7 +375,7 @@
       sum = sum + number
     }
 
-    console.log("和：" + sum + " 平均值" + ((sum / n).toFixed(5)))
+    console.log(sum + " " + ((sum / n).toFixed(5)))
   </script>
   <script type="text/javascript" id="ch0105/05">
     var number = Number(prompt("请学生的总数"))
