@@ -12,9 +12,12 @@ var gaobingjiebest = {
         res.push(item)
         item = []
         n = 0
+      } else if (i === len - 1) {
+        res.push(item)
+        return res
       }
     }
 
     return res
-  }
+  },
 }
