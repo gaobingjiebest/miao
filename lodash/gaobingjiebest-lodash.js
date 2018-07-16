@@ -20,4 +20,15 @@ var gaobingjiebest = {
 
     return res
   },
+  compact: function (array) {
+    let res = []
+
+    for (var i = 0; i < array.length; i++) {
+      if (array[i]) {
+        res.push(array[i])
+      }
+    }
+
+    return res
+  }
 }
