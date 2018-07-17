@@ -30,5 +30,26 @@ var gaobingjiebest = {
     }
 
     return res
+  },
+  concat: function (array, ...value) {
+    let concated = []
+
+    for (var i = 0; i < array.length; i++) {
+      concated.push(array[i])
+    }
+
+    let len = arguments.length
+
+    for (var i = 1; i < len; i++) {
+      if (Array.isArray(arguments[i])) {
+        for (var o = 0; o < arguments[i].length; o++) {
+          concated.push(arguments[i][o])
+        }
+      } else {
+        concated.push(arguments[i])
+      } 
+    }
+
+    return concated
   }
 }
