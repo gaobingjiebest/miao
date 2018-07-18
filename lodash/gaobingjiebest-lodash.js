@@ -51,5 +51,98 @@ var gaobingjiebest = {
     }
 
     return concated
+  },
+  flatten: function (array) {
+    let result = []
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (var o = 0; o < array[i].length; o++) {
+          result.push(array[i][o])
+        }
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+  flattenDeep: function (array) {
+    let result = []
+
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        result = result.concat(flattenDeep(array[i]))
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+  flattenDepth: function (array, depth = 1) {
+    if (depth === 0) {
+      return array
+    }
+    let result = []
+
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        result = result.concat(flattenDepth(array[i], depth - 1))
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+  difference: function (array, ...value) {
+    let result = []
+    let compare = []
+    for (var i = 1; i < arguments.length; i++) {
+      compare = compare.concat(arguments[i])
+    }
+    for (var o = 0; o < array.length; o++) {
+      if(compare.indexOf(array[o]) === -1) {
+        result.push(array[o])
+      }
+    }
+    return result
+  },
+  differenceBy: function (array, ...argu) {
+    let compare = []
+    for (var i = 1; i < arguments.length; i++) {
+      compare = compare.concat(arguments[i])
+    }
+    let len = compare.length - 1
+    let result = []
+    let count = 0
+    if ((typeof compare[len])  === "function") {
+      let func = compare[len]
+      for (var i = 0; i < array.length; i++) {
+        for (var o = 0; o < len; o++) {
+          if (func(array[i]) === func(compare[o])) {
+            count++
+          }
+        }
+        if (count === 0) {
+          result.push(array[i])
+        } else {
+          count = 0
+        }
+      }
+    } else {
+      for (var i = 0; i < array.length; i++) {
+        let n = compare[len]
+        let count = 0
+        for (var o = 0; o < len; o++) {
+          if (array[i][n] === compare[o][n]) {
+            count++
+          }
+        }
+        if (count === 0) {
+          result.push(array[i])
+        } else {
+          count = 0
+        }
+      }
+    }
+    return result
   }
 }
