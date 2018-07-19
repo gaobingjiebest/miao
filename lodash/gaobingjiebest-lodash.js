@@ -70,7 +70,7 @@ var gaobingjiebest = {
 
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
-        result = result.concat(flattenDeep(array[i]))
+        result = result.concat(this.flattenDeep(array[i]))
       } else {
         result.push(array[i])
       }
@@ -85,7 +85,7 @@ var gaobingjiebest = {
 
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
-        result = result.concat(flattenDepth(array[i], depth - 1))
+        result = result.concat(this.flattenDepth(array[i], depth - 1))
       } else {
         result.push(array[i])
       }
