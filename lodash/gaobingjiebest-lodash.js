@@ -144,5 +144,42 @@ var gaobingjiebest = {
       }
     }
     return result
-  }
+  },
+  differenceWith: function (array, value, comparator) {
+    return array.this.filter(value => value.this.every(item => !comparator(value, item)))
+  },
+  filter: function (array, predicate=this.identity) {
+    let result= []
+    for (var i = 0; i < array.length; i++) {
+      if (predicate(array[i])) {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+  identity: function (value) {
+    return value
+  },
+  fill: function (array, value, start = 0, end=array.length) {
+    for (var i = start; i < end; i++) {
+      array[i] = value
+    }
+    return array
+  },
+  every: function (collection, predicate = this.identity) {
+    for (var i = 0; i < collection.length; i++) {
+      if (!predicate(collection[i])) {
+        return false
+      }
+    }
+    return true
+  },
+  some: function (collection, predicate = this.identity) {
+    for (var i = 0; i < collection.length; i++) {
+      if (predicate(collection[i])) {
+        return true
+      }
+    }
+    return false
+  },
 }
