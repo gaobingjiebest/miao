@@ -145,21 +145,26 @@ var gaobingjiebest = {
     }
     return result
   },
+
   differenceWith: function (array, value, comparator) {
     return array.this.filter(value => value.this.every(item => !comparator(value, item)))
   },
-  filter: function (array, predicate=this.identity) {
+
+  filter: function (collection, predicate=gaobingjiebest.identity) {
     let result= []
-    for (var i = 0; i < array.length; i++) {
-      if (predicate(array[i])) {
-        result.push(array[i])
+    predicate = _.iteratee(predicate)
+    for (var i in collection) {
+      if (predicate(collection[i], i, collection)) {
+        result.push(collection[i])
       }
     }
     return result
   },
+
   identity: function (value) {
     return value
   },
+
   fill: function (array, value, start = 0, end=array.length) {
     for (var i = start; i < end; i++) {
       array[i] = value
@@ -175,11 +180,21 @@ var gaobingjiebest = {
     return true
   },
   some: function (collection, predicate = this.identity) {
-    for (var i = 0; i < collection.length; i++) {
-      if (predicate(collection[i])) {
-        return true
+    if (typeof predicate === "function") {
+      for (var i = 0; i < collection.length; i++) {
+        if (predicate(collection[i])) {
+          return true
+        }
+      }
+      return false
+    } else {
+      for (var i = 0; i < collection.length; i++) {
+        if () {}
       }
     }
-    return false
+
   },
+  matches: function (source) {
+    return 
+  }
 }
