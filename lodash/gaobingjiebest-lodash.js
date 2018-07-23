@@ -187,12 +187,7 @@ var gaobingjiebest = {
         }
       }
       return false
-    } else {
-      for (var i = 0; i < collection.length; i++) {
-        if () {}
-      }
-    }
-
+    } 
   },
   matches: function (source) {
     return 
