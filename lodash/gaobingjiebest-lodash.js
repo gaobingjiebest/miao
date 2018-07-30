@@ -189,7 +189,65 @@ var gaobingjiebest = {
       return false
     } 
   },
-  matches: function (source) {
-    return 
-  }
+
+  isEqual: function (value, other) {
+    if (value === other) {
+      return value !== 0 || 1 / value === 1 / other
+    }
+
+    if (value !== value && other !== other) {
+      return true
+    }
+
+    if (value == null && other == null) {
+      return false
+    }
+
+    let typeValue = typeof value
+    let typeOther = typeof other
+
+    if (typeValue !== "function" && typeValue !== "object" && typeOther !== "object") {
+      return false
+    }
+
+    let classNameA = Object.prototype.toString.call(value)
+    let classNameB = Object.prototype.toString.call(other)
+
+    if (classNameA !== classNameB) {
+      return false
+    }
+
+    
+
+    if (Array.isArray(value) && Array.isArray(other)) {
+      for (var i = 0; i < value.length; i++) {
+        if (!(value[i] === other[i])) {
+          return false
+        }
+        return true
+      }
+    } else {
+      return false
+    }
+  },
+
+  map: function (collection, iteratee = gaobingjiebest.identity) {
+    var result = []
+
+    if (Object.prototype.toString.call(collection) === "[object Array]") {
+      var len = collection.length
+
+      for (var i = 0; i < len; i++) {
+        result.push(iteratee(collection[i]))
+      }
+
+      return result
+    } else if (Object.prototype.toString.call(collection) === "[object Object]") {
+      for (var key in collection) {
+        result.push(iteratee(collection[key]))
+      }
+
+      return result
+    }
+  },
 }
